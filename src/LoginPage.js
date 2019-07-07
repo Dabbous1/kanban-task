@@ -6,21 +6,32 @@ class LoginPage extends Component {
         super(props);
         this.state = {  };
     }
+
+    goToApp = event => {
+        event.preventDefault();
+        console.log(this);
+        this.props.history.push(`/App`);
+    };
+
+    fullName = React.createRef();
+    email = React.createRef();
+    password = React.createRef();
+
     render() {
         return (
-        <form>
+        <form onSubmit={this.goToApp}>
         <label>
             Full Name:
-            <input type="text" name="name" />
-        </label>
+            <input type="text" name="name" ref={this.fullName}/>
+        </label> <br />
         <label>
             Email:
-            <input type="text" email="email" />
-        </label>
+            <input type="text" email="email" ref={this.email} />
+        </label> <br /> 
         <label>
             Password:
-            <input type="text" password="password" />
-        </label>
+            <input type="text" password="password" ref={this.password} />
+        </label> <br />
         <input type="submit" value="Submit" />
         </form>
         );

@@ -1,8 +1,32 @@
 .App {
+  display: flex;
+  margin-top: 10%
+}
+
+.column {
+  border: 1px red solid;
+  flex-grow: 1;
+  padding-bottom: 200px;
   text-align: center;
 }
 
-.App-logo {
+.card {
+  padding: 25px;
+  border: 1px blue solid;
+  display: flex;
+}
+
+.card span {
+  flex-grow: 1; 
+  text-align: center;
+}
+
+.addButton {
+  align-items: bottom;
+  color: red;
+}
+
+/* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
@@ -30,4 +54,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

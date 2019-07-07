@@ -12,4 +12,4 @@ const Router = () => (
     </BrowserRouter>
 );
 
-export default Router   ;
+export default Router;

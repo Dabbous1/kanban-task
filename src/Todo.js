@@ -7,10 +7,14 @@ class Todo extends Component {
         return (
         <div className="column"> 
             <h1 className="Title">To Do</h1>
-             <Card /> 
         </div>
         );
     }
 }
 
 export default Todo;
+
+
+// {Object.keys(this.state.cards).map(key => (
+//     <Todo key={key} details={this.state.cards[key]} />
+//   ))}

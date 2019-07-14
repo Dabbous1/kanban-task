@@ -7,7 +7,7 @@ class Done extends Component {
         return (
         <div className="column"> 
             <h1 className="Title">Done</h1>
-            <Card />
+           <Card />
         </div>
         );
     }

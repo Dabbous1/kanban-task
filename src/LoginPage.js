@@ -7,15 +7,20 @@ class LoginPage extends Component {
         this.state = {  };
     }
 
-    goToApp = event => {
-        event.preventDefault();
-        console.log(this);
-        this.props.history.push(`/App`);
-    };
-
     fullName = React.createRef();
     email = React.createRef();
-    password = React.createRef();
+    password = React.createRef(); 
+
+    goToApp = event => {
+        event.preventDefault();
+        const user = {
+            fullName: this.fullName.current.value, 
+            email: this.email.current.value,
+            password: this.email.current.value,
+        };
+        console.log(user);
+        this.props.history.push(`/App`);
+    };
 
     render() {
         return (

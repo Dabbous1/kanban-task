@@ -7,7 +7,7 @@ class Onprogress extends Component {
         return (
         <div className="column"> 
             <h1 className="Title">On Progress</h1>
-            <Card />
+           <Card />
         </div>
         );
     }

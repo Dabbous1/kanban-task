@@ -14,27 +14,10 @@ class AddCardForm extends Component {
             taskName: this.taskName.current.value, 
             taskDescription: this.taskDescription.current.value,
             taskPeriod: this.taskPeriod.current.value,
+            taskStatus: this.taskStatus.current.value,
             
         };
-        const cname = {
-            taskStatus: this.taskStatus.current.value,
-        };
-        const staticname = {
-            taskStatus: this.taskStatus.current.value,
-        };
-
-        const taskStatus = {
-            taskStatus: this.taskStatus.current.value,
-        }
-    
-        if (cname = taskStatus) {
-            
-        }
-
         this.props.addCard(card);
-
-
-
         event.currentTarget.reset();
     };
 

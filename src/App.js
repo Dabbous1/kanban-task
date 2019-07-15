@@ -28,58 +28,76 @@ class App extends Component {
       };
     }; 
 
-    addCard = (card, cname, staticname) => {
+    addCard = (card) => {
       console.log("Adding a Card");
       const cards = { ...this.state.columns.cards };
-      const cnames  = { ...this.state.columns.name };
-      const staticnames = { ...this.state.columns.name };
-      
       cards[`card${Date.now()}`] = card;
-      cnames[`cname`] = cname;
-      staticnames[`staticname`] = staticname; 
 
-      this.setState({
-        columns: [
-          { 
-            name: cnames,
-            cards: cards
-          },
-          { 
-            name: staticnames,
-            cards: []
-          },
-          { 
-            name: staticnames,
-            cards: cards
-          },
-        ] 
-      });
+      console.log(card.taskStatus)
+
+      if (card.taskStatus === 'Todos') {
+        this.setState({
+          columns: [
+            { 
+              name: 'Todos',
+              cards: cards
+            },
+            { 
+              name: 'Onprogress',
+              cards: []
+            },
+            { 
+              name: 'Done',
+              cards: []
+            },
+          ] 
+        });
+      } else if (card.taskStatus === 'Onprogress') {
+        this.setState({
+          columns: [
+            { 
+              name: 'Todos',
+              cards: []
+            },
+            { 
+              name: 'Onprogress',
+              cards: cards
+            },
+            { 
+              name: 'Done',
+              cards: []
+            },
+          ] 
+        }); 
+      } else {
+        this.setState({
+          columns: [
+            { 
+              name: 'Todos',
+              cards: []
+            },
+            { 
+              name: 'Onprogress',
+              cards: []
+            },
+            { 
+              name: 'Done',
+              cards: cards
+            },
+          ] 
+        }); 
+      }
     };
     
   render() {
     return (
-    <div className="App">
+  <div className="App">
    {Object.keys(this.state.columns).map(key => (
       <Column key={key} details={this.state.columns[key]} />
     ))}
-    <AddCardForm addCard={this.addCard} />
-    </div>
+      <AddCardForm addCard={this.addCard} />
+  </div>
     );
   }
 }
 export default App;
-
-
-
-
-// {Object.keys(this.state.cards).map(key => (
-//     <Todo key={key} details={this.state.cards[key]} />
-//   ))}
-
-// {this.state.columns.map((column, columnkey) => (
-//   <Column
-//     column={column}
-//     columnkey={columnkey}
-//     />
-//   ))}
-

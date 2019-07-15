@@ -1,0 +1,22 @@
+{
+    "extends": "airbnb",
+    "plugins": ["react", "jsx-a11y", "import"],
+    "parser": "babel-eslint",
+    "globals": {
+      "Roles": false,
+      "FS": false,
+      "FlowRouter": false,
+      "Meteor": false,
+      "Tracker": false,
+      "Accounts": false,
+      "Counts": false,
+      "HTTP": false,
+      "Restivus": false,
+      "log": false,
+      "Winston": false,
+      "Winston_Papertrail": false,
+      "ServiceConfiguration": false,
+      "fetch": false,
+      "XMLHttpRequest": false
+    }
+}
